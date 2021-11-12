@@ -48,8 +48,11 @@ function fractal_tree() {
     background(235, 170, 120);
     fractal_tree_setup();
 
-    tree[0].show();
+    create_upper();
 
+    create_back_button();
+
+    tree[0].show();
     for (let i = 0; i < tree.length; i++) {
         tree[i].show();
         // tree[i].sway();
@@ -57,11 +60,28 @@ function fractal_tree() {
 }
 
 function fractal_tree_mousePressed() {
-    for (let i = tree.length - 1; i >= 0; i--) {
-        if (!tree[i].finished) {
-            tree.push(tree[i].branchRight());
-            tree.push(tree[i].branchLeft());
+    if (mouseY > 50) { // in the bottom 7/8
+        for (let i = tree.length - 1; i >= 0; i--) {
+            if (!tree[i].finished) {
+                tree.push(tree[i].branchRight());
+                tree.push(tree[i].branchLeft());
+            }
+            tree[i].finished = true;
         }
-        tree[i].finished = true;
     }
+}
+
+function create_upper() {
+    fill(color(200, 120, 40)); // autumn orange
+    noStroke();
+    rect(0, 0, 400, 50);
+}
+
+let back_button;
+
+function create_back_button() {
+    back_button = createImg('images/back.png');
+    back_button.position(10, 10);
+    back_button.size(60, 30);
+    back_button.mousePressed(changeState_home_page);
 }

@@ -9,12 +9,15 @@ function setup() {
 }
 
 function mousePressed() {
-	if (state === "fractal_tree") {
+	if (state === "home_page") {
+
+	} else if (state === "fractal_tree") {
 		fractal_tree_mousePressed();
 	}
 }
 
 function draw() {
+
 	if (state === "fractal_tree") {
 		fractal_tree();
 	} else if (state === "home_page") {
