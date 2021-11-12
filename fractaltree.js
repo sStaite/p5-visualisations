@@ -34,7 +34,7 @@ function Branch(front, end) {
     }
 }
 
-let tree[];
+let tree = [];
 
 function fractal_tree_setup() {
     let a = createVector(width / 2, height);
@@ -46,6 +46,8 @@ function fractal_tree_setup() {
 
 function fractal_tree() {
     background(235, 170, 120);
+    fractal_tree_setup();
+
     tree[0].show();
 
     for (let i = 0; i < tree.length; i++) {

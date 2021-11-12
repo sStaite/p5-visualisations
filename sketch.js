@@ -1,12 +1,10 @@
-state = "fractal_tree"
+state = "home_page";
 
 function setup() {
 	createCanvas(400, 400);
 
 	if (state === "home_page") {
 		home_page_setup();
-	} else if (state == "fractal_tree") {
-		fractal_tree_setup();
 	}
 }
 
@@ -17,9 +15,9 @@ function mousePressed() {
 }
 
 function draw() {
-	if (state === "home_page") {
-		home_page();
-	} else if (state === "fractal_tree") {
+	if (state === "fractal_tree") {
 		fractal_tree();
+	} else if (state === "home_page") {
+		home_page();
 	}
 }

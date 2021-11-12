@@ -1,16 +1,22 @@
 
-function home_page() {
-    background(51);
-}
+let fractal_button;
 
 function home_page_setup() {
-    let button;
-    button = createButton('Change colour');
-    button.position(20, 20);
-    button.mousePressed(change_state);
+    create_fractal_button();
 }
 
-function change_state() {
-    let val = random(255);
-    background(val);
+function changeState_fractal_tree() {
+    state = "fractal_tree";
+    fractal_button.hide();
+}
+
+function create_fractal_button() {
+    fractal_button = createButton('Fractal Tree');
+    fractal_button.position(20, 20);
+    fractal_button.mousePressed(changeState_fractal_tree);
+}
+
+function home_page() {
+    background(51);
+    fractal_button.mousePressed(changeState_fractal_tree);
 }
