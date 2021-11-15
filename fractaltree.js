@@ -9,6 +9,11 @@ function Branch(front, end) {
         line(this.front.x, this.front.y, this.end.x, this.end.y);
     }
 
+    this.hide = function() {
+        stroke(235, 170, 120);
+        line(this.front.x, this.front.y, this.end.x, this.end.y);
+    }
+
     this.branchRight = function() {
         let direction = p5.Vector.sub(this.end, this.front);
         direction.rotate(PI / 3);
@@ -42,34 +47,29 @@ function fractal_tree_setup() {
     let root = new Branch(a, b);
 
     tree[0] = root;
+
+    for (let i = 0; i < 2**(N_VALUE_MAX-1); i++) {
+        if (!tree[i].finished) {
+            tree.push(tree[i].branchRight());
+            tree.push(tree[i].branchLeft());
+        }
+        tree[i].finished = true;
+    }
 }
 
 function fractal_tree() {
-    background(235, 170, 120);
-    fractal_tree_setup();
-
-    create_upper();
-
-    create_back_button();
-
+    let n = n_value_slider.value();
     tree[0].show();
-    for (let i = 0; i < tree.length; i++) {
-        tree[i].show();
+    for (let i = 0; i < 2**(N_VALUE_MAX-1); i++) {
+        if (i < 2**n - 1) {
+            tree[i].show();
+        } else {
+            tree[i].hide();
+        }
         // tree[i].sway();
     }
 }
 
-function fractal_tree_mousePressed() {
-    if (mouseY > 50) { // in the bottom 7/8
-        for (let i = tree.length - 1; i >= 0; i--) {
-            if (!tree[i].finished) {
-                tree.push(tree[i].branchRight());
-                tree.push(tree[i].branchLeft());
-            }
-            tree[i].finished = true;
-        }
-    }
-}
 
 function create_upper() {
     fill(color(200, 120, 40)); // autumn orange
@@ -77,11 +77,9 @@ function create_upper() {
     rect(0, 0, 400, 50);
 }
 
-let back_button;
+function fractal_show() {
+    back_button.show();
+    n_value_slider.show();
+    // add all tidbits on fractal screen
 
-function create_back_button() {
-    back_button = createImg('images/back.png');
-    back_button.position(10, 10);
-    back_button.size(60, 30);
-    back_button.mousePressed(changeState_home_page);
 }

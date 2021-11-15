@@ -1,26 +1,21 @@
-state = "home_page";
+let state = "home_page";
+var back_button; var fractal_button; var n_value_slider;
 
 function setup() {
 	createCanvas(400, 400);
 
-	if (state === "home_page") {
-		home_page_setup();
-	}
+	button_setup();
+	slider_setup();
+
+	home_page_setup();
+
 }
 
-function mousePressed() {
-	if (state === "home_page") {
-
-	} else if (state === "fractal_tree") {
-		fractal_tree_mousePressed();
-	}
-}
 
 function draw() {
-
 	if (state === "fractal_tree") {
 		fractal_tree();
 	} else if (state === "home_page") {
-		home_page();
+
 	}
 }
