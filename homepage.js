@@ -17,4 +17,7 @@ function hide_all() {
     back_button.hide();
     fractal_button.hide();
     n_value_slider.hide();
+    left_value_slider.hide();
+    right_value_slider.hide();
+
 }

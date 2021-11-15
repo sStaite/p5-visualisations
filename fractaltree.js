@@ -14,9 +14,13 @@ function Branch(front, end) {
         line(this.front.x, this.front.y, this.end.x, this.end.y);
     }
 
+    let angright = right_value_slider.value();
+    let angleft = -left_value_slider.value();
+
     this.branchRight = function() {
         let direction = p5.Vector.sub(this.end, this.front);
-        direction.rotate(PI / 3);
+
+        direction.rotate(angright);
         direction.mult(0.67);
 
         let new_end = p5.Vector.add(this.end, direction);
@@ -25,7 +29,8 @@ function Branch(front, end) {
 
     this.branchLeft = function() {
         let direction = p5.Vector.sub(this.end, this.front);
-        direction.rotate(-PI / 8);
+
+        direction.rotate(angleft);
         direction.mult(0.67);
 
 
@@ -80,6 +85,8 @@ function create_upper() {
 function fractal_show() {
     back_button.show();
     n_value_slider.show();
+    left_value_slider.show();
+    right_value_slider.show();
     // add all tidbits on fractal screen
 
 }

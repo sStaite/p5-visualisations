@@ -1,5 +1,6 @@
 let state = "home_page";
-var back_button; var fractal_button; var n_value_slider;
+var back_button; var fractal_button;
+var n_value_slider; var left_value_slider; var right_value_slider;
 
 function setup() {
 	createCanvas(400, 400);
