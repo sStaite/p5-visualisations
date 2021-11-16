@@ -19,5 +19,4 @@ function hide_all() {
     n_value_slider.hide();
     left_value_slider.hide();
     right_value_slider.hide();
-
 }

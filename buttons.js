@@ -10,7 +10,6 @@ function create_back_button() {
     back_button.position(10, 10);
     back_button.size(60, 30);
     back_button.mousePressed(home_page_setup);
-
     back_button.hide();
 }
 
@@ -26,10 +25,7 @@ function changeStateTo_fractal_tree() {
     fractal_show();
     state = "fractal_tree";
 
-    background(235, 170, 120);
-    fractal_tree_setup();
-
+    fractal_draw();
     create_upper();
-
     create_back_button();
 }
