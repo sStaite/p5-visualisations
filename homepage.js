@@ -1,4 +1,6 @@
 
+const WIDTH = 600
+const HEIGHT = 600
 
 function home_page_setup() {
     state = "home_page";
@@ -10,13 +12,21 @@ function home_page_setup() {
 
 function show_home_buttons() {
     fractal_button.show();
+    mandelbrot_button.show();
     // any other home page buttons
 }
 
 function hide_all() {
+    // main objects
     back_button.hide();
+
+    // fractal objects
     fractal_button.hide();
     n_value_slider.hide();
     left_value_slider.hide();
     right_value_slider.hide();
+
+    // mandelbrot objects
+    mandelbrot_button.hide();
+
 }

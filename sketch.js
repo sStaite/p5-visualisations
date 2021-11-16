@@ -1,9 +1,12 @@
 let state = "home_page";
-var back_button; var fractal_button;
-var n_value_slider; var left_value_slider; var right_value_slider;
+var back_button;
+
+var fractal_button; var n_value_slider; var left_value_slider; var right_value_slider;
+
+var mandelbrot_button;
 
 function setup() {
-	createCanvas(400, 400);
+	createCanvas(WIDTH, HEIGHT);
 
 	button_setup();
 	slider_setup();
@@ -14,9 +17,11 @@ function setup() {
 
 
 function draw() {
-	if (state === "fractal_tree") {
-		fractal_tree();
-	} else if (state === "home_page") {
+	if (state === "home_page") {
 
-	}
+	} else if (state === "fractal_tree") {
+		fractal_tree();
+	} else if (state === "mandelbrot") {
+		// mandelbrot();
+}
 }
