@@ -5,7 +5,7 @@ Written in p5.
 
 Implementing:
 - Fractal Trees (Vaguely finished)
-- Mandelbrot set (In progess)
+- Mandelbrot set (In progress)
 - Julia set
 - Pendulum
 - Double pendulum
