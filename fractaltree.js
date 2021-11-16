@@ -25,12 +25,6 @@ function grow_tree(len, n, angL, angR) {
 }
 
 
-function create_upper() {
-    fill(color(200, 120, 40)); // autumn orange
-    noStroke();
-    rect(0, 0, WIDTH, HEIGHT / 12);
-}
-
 function fractal_show() {
     back_button.show();
     n_value_slider.show();
@@ -41,7 +35,7 @@ function fractal_show() {
 
 function fractal_draw() {
     background(235, 170, 120);
-    create_upper();
+    create_upper(color(200, 120, 40));
     translate(WIDTH / 2, height);
     stroke(150, 90, 30);
 }

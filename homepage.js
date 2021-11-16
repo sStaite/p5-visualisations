@@ -30,3 +30,10 @@ function hide_all() {
     mandelbrot_button.hide();
 
 }
+
+
+function create_upper(colour) {
+    fill(colour); // autumn orange
+    noStroke();
+    rect(0, 0, WIDTH, HEIGHT / 12);
+}

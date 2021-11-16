@@ -22,6 +22,6 @@ function draw() {
 	} else if (state === "fractal_tree") {
 		fractal_tree();
 	} else if (state === "mandelbrot") {
-		// mandelbrot();
+		mandelbrot();
 }
 }
