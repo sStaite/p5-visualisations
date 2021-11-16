@@ -43,5 +43,5 @@ function fractal_draw() {
     background(235, 170, 120);
     create_upper();
     translate(200, height);
-    stroke(200, 120, 40);
+    stroke(150, 90, 30);
 }
