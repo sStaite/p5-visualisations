@@ -30,8 +30,6 @@ function changeStateTo_fractal_tree() {
     hide_all();
     fractal_show();
     fractal_draw();
-
-    create_back_button();
 }
 
 
@@ -50,6 +48,4 @@ function changeStateTo_mandelbrot() {
     hide_all();
     mandelbrot_show();
     mandelbrot_draw();
-
-    create_back_button();
 }
