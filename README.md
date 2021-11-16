@@ -4,8 +4,8 @@ Javascript project to learn the basics of javascript but also create a little pr
 Written in p5.
 
 Implementing:
-- Fractal Trees (Currently)
-- Mandelbrot set
+- Fractal Trees (Vaguely finished)
+- Mandelbrot set (In progess)
 - Julia set
 - Pendulum
 - Double pendulum
