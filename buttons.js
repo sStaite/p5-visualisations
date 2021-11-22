@@ -1,8 +1,12 @@
 
 function button_setup() {
     create_back_button();
+
     create_fractal_button();
     create_mandelbrot_button();
+
+    create_rgb_button();
+    create_rainbow_button();
     // and any other buttons
 }
 
@@ -48,4 +52,34 @@ function changeStateTo_mandelbrot() {
     hide_all();
     mandelbrot_show();
     mandelbrot_draw();
+}
+
+
+
+
+function create_rgb_button() {
+    rgb_button = createButton('Singular');
+    rgb_button.position(100, 10);
+    rgb_button.size(90, 30);
+    rgb_button.mousePressed(changeColourTo_rgb);
+}
+
+function changeColourTo_rgb() {
+    colour_type = "rgb";
+    changeStateTo_mandelbrot();
+}
+
+
+
+
+function create_rainbow_button() {
+    rainbow_button = createButton('Rainbow');
+    rainbow_button.position(200, 10);
+    rainbow_button.size(90, 30);
+    rainbow_button.mousePressed(changeColourTo_hsb);
+}
+
+function changeColourTo_hsb() {
+    colour_type = "hsb";
+    changeStateTo_mandelbrot();
 }

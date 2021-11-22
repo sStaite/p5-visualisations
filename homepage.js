@@ -28,6 +28,8 @@ function hide_all() {
 
     // mandelbrot objects
     mandelbrot_button.hide();
+    rgb_button.hide();
+    rainbow_button.hide();
 
 }
 

@@ -5,6 +5,10 @@ var SCALED_W = WIDTH / mult;
 var SCALED_H = HEIGHT / mult;
 var MAX_ITER = 100;
 
+var colour_type = "rgb";
+const hsb_colours = [[255, 0, 0], [255, 165, 0], [255, 255, 0], [0, 128, 0],
+    [0, 0, 255], [75, 0, 130], [238, 130, 238]];
+
 
 function mandelbrot() {
     mandelbrot_draw();
@@ -37,14 +41,22 @@ function mandelbrot() {
 
             let p_bright = sqrt(n / MAX_ITER) ** (1/2) * 255;
 
-            if (n == MAX_ITER) {
-                p_bright = 0;
-            }
-
             let curr_pix = (x + y * SCALED_H) * 4;
-            pixels[curr_pix]     = p_bright * 0.4;
-            pixels[curr_pix + 1] = p_bright * 0.2;
-            pixels[curr_pix + 2] = p_bright * 0.6;
+
+            if (n == MAX_ITER) {
+                pixels[curr_pix]     = 0
+                pixels[curr_pix + 1] = 0
+                pixels[curr_pix + 2] = 0
+            } else if (colour_type === "rgb") {
+                pixels[curr_pix]     = p_bright * 0.4;
+                pixels[curr_pix + 1] = p_bright * 0.2;
+                pixels[curr_pix + 2] = p_bright * 0.6;
+            } else if (colour_type === "hsb") {
+                let i = n % 7;
+                pixels[curr_pix]     = hsb_colours[i][0];
+                pixels[curr_pix + 1] = hsb_colours[i][1];
+                pixels[curr_pix + 2] = hsb_colours[i][2];
+            }
             pixels[curr_pix + 3] = 255;
 
         }
@@ -58,6 +70,8 @@ function mandelbrot() {
 
 function mandelbrot_show() {
     back_button.show();
+    rainbow_button.show();
+    rgb_button.show();
 
 }
 

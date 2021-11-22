@@ -3,7 +3,7 @@ var back_button;
 
 var fractal_button; var n_value_slider; var left_value_slider; var right_value_slider;
 
-var mandelbrot_button;
+var mandelbrot_button; var rgb_button; var rainbow_button;
 
 function setup() {
 	createCanvas(WIDTH, HEIGHT);
